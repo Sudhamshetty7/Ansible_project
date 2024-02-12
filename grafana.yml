@@ -1,4 +1,4 @@
-- name: install and deploy tomcat
+- name: install and deploy grafana
   hosts: java
   become: true
   tasks:
