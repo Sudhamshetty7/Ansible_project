@@ -1,25 +1,25 @@
 ---
-hosts: java
-tasks:
-  - name: adding_key
-    apt_key:
-      url: "https://packages.grafana.com/gpg.key"
-      state: present
+- hosts: java
+  tasks:
+    - name: adding_key
+      apt_key:
+        url: "https://packages.grafana.com/gpg.key"
+        state: present
 
-  - name: adding_repositry
-    apt_repository:
-      repo: "deb https://packages.grafana.com/oss/deb stable main"
-      state: present
-      validate_certs: no
+    - name: adding_repositry
+      apt_repository:
+        repo: "deb https://packages.grafana.com/oss/deb stable main"
+        state: present
+        validate_certs: no
 
-  - name: install_grafana
-    apt:
-      name: grafana
-      state: latest
-      update_cache: yes
+    - name: install_grafana
+      apt:
+        name: grafana
+        state: latest
+        update_cache: yes
 
-  - name: start_grafana
-    systemd:
-      name: grafana-server
-      state: started
-      enabled: yes
+    - name: start_grafana
+      systemd:
+        name: grafana-server
+        state: started
+        enabled: yes
