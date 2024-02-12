@@ -6,12 +6,12 @@
     apt:
       name: prometheus
       state: present
-  - tags:
+  tags:
     - prometheus
   - name: Ensure Prometheus service is enabled and started
     systemd:
       name: prometheus
       state: started
       enabled: yes
-  - tags:
+  tags:
     - prometheus
