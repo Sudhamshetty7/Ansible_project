@@ -11,3 +11,5 @@ pipeline {
        sh 'ansible-playbook -i hosts sample.yml'
      }
     } 
+  }
+}
