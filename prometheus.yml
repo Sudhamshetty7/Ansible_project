@@ -1,1 +1,17 @@
-
+- name: install and deploy prometheus
+  hosts: java
+  become: true
+  tasks:
+  - name: Install Prometheus
+    apt:
+      name: prometheus
+      state: present
+  - tags:
+    - prometheus
+  - name: Ensure Prometheus service is enabled and started
+    systemd:
+      name: prometheus
+      state: started
+      enabled: yes
+  - tags:
+    - prometheus
