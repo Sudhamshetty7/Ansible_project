@@ -1,5 +1,5 @@
 ---
-hosts: all
+hosts: java
 tasks:
   - name: adding_key
     apt_key:
