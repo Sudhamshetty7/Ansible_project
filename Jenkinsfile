@@ -3,6 +3,7 @@ pipeline {
   stages { 
     stage('checkout stage') {
       steps {
+        sh 'rm -rf Ansible_project'
         sh 'git clone https://github.com/Sudhamshetty7/Ansible_project.git'
       }
     }
